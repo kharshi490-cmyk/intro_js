@@ -5,7 +5,7 @@ function type(x) {
 
 function isEqual(x, y) {
     if (type(x) !== type(y)) return false;
-    if (type(x) !== 'object' && type(x) !== 'array') return x === y;
+    if (type(x) !== 'object' && type(x) !== 'array' || x === null) return x === y;
 
     const x_entries = Object.entries(x);
     const y_entries = Object.entries(y);
@@ -18,3 +18,5 @@ function isEqual(x, y) {
     }
     return true;
 }
+
+console.log(isEqual(null, null));
